@@ -1,0 +1,170 @@
+.home {
+    padding: 20px;
+  }
+  
+  .hero .slider {
+    width: 100%;
+    height: 400px;
+    background-color: #eaeaea;
+    /* Add sliding functionality */
+  }
+  
+  .new-arrivals, .best-sellers, .tops, .maxi-dresses, .mini-dresses, .swim-wears {
+    margin-top: 40px;
+  }
+  
+  .new-arrivals h2, .best-sellers h2, .tops h2, .maxi-dresses h2, .mini-dresses h2, .swim-wears h2, .e-gift-cards h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  /* New Arrivals, Best Sellers */
+  .product-box {
+    flex: 0 0 20%;
+    height: 500px; /* Adjust height as needed */
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.product-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-description {
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
+    text-align: center;
+}
+
+.product-description:hover {
+    background-color: #d0d5ea;
+}
+
+.product-description h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.product-description p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.product-colors {
+    display:inline-flex;
+    gap: 5px;
+}
+
+.product-colors span {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+  
+
+  /* New Arrivals */
+  .product-row{
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+  }
+  
+  .prev,
+  .next {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 120%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .prev {
+    left: 0;
+  }
+
+  .next {
+    right: 0;
+  }
+  
+  /* Best Sellers */
+  .product-row2{
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    width: 100%;
+  }
+
+  .prev2,
+  .next2 {
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    position: absolute;
+    top: 205%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .prev2 {
+    left: 0;
+  }
+
+  .next2 {
+    right: 0;
+  }
+
+  .banner {
+    width: 100%;
+    height: 200px;
+    background-color: #ddd;
+    margin-top: 40px;
+    /* Add banner content */
+  }
+  
+  .e-gift-cards {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .e-gift-cards button {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  .e-gift-cards button:hover {
+    background-color: #333;
+  }
+  

@@ -1,120 +1,9 @@
-// import React from 'react';
-// import '../styles/home.css';
-// import NewArrivals1 from '../assets/images/product3.webp';
-// import NewArrivals2 from '../assets/images/product6.webp';
-// import NewArrivals3 from '../assets/images/product15.webp'; 
-// import NewArrivals4 from '../assets/images/product2.webp'; 
-// import NewArrivals5 from '../assets/images/product12.webp'; 
-// import NewArrivals6 from '../assets/images/product9.webp';
-
-// import BestSellers1 from '../assets/images/product1.webp';
-// import BestSellers2 from '../assets/images/product18.webp';
-// import BestSellers3 from '../assets/images/product20.webp';
-// import BestSellers4 from '../assets/images/product17.webp';
-// import BestSellers5 from '../assets/images/product8.webp';
-// import BestSellers6 from '../assets/images/product11.webp';
-// import BestSellers7 from '../assets/images/product19.webp';
-// import BestSellers8 from '../assets/images/product21.webp';
-// import BestSellers9 from '../assets/images/product22.webp';
-
-// const Home = () => {
-
-//     const scrollLeft = () => {
-//         document.getElementById('product-row').scrollLeft -= 300;
-//     };
-
-//     const scrollRight = () => {
-//         document.getElementById('product-row').scrollLeft += 300;
-//     };
-
-//     const scrollLeft2 = () => {
-//         document.getElementById('product-row2').scrollLeft -= 300;
-//     };
-
-//     const scrollRight2 = () => {
-//         document.getElementById('product-row2').scrollLeft += 300;
-//     };
-
-//   return (
-//     <main className="home">
-//       <section className="hero">
-//         <div className="slider">
-//           {/* Add sliding images here */}
-//         </div>
-//       </section>
-      
-//       <section className="new-arrivals">
-//         <h2>NEW ARRIVALS</h2>
-//         <div className="carousel-container">
-//             <button className="prev" onClick={scrollLeft}>&lt;</button>
-//             <div className="product-row" id="product-row">
-//                 <div className="product-box" style={{ backgroundImage: `url(${NewArrivals1})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${NewArrivals2})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${NewArrivals3})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${NewArrivals4})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${NewArrivals5})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${NewArrivals6})` }}></div>
-//             </div>
-//             <button className="next" onClick={scrollRight}>&gt;</button>
-//         </div>
-//       </section>
-      
-//       <section className="best-sellers">
-//         <h2>BEST SELLERS</h2>
-//         <div className="carousel-container2">
-//             <button className="prev2" onClick={scrollLeft2}>&lt;</button>
-//             <div className="product-row2" id="product-row2">
-//                 <div className="product-box" style={{ backgroundImage: `url(${BestSellers1})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${BestSellers2})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${BestSellers3})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${BestSellers4})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${BestSellers5})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${BestSellers6})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${BestSellers7})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${BestSellers8})` }}></div>
-//                 <div className="product-box" style={{ backgroundImage: `url(${BestSellers9})` }}></div>
-//             </div>
-//             <button className="next2" onClick={scrollRight2}>&gt;</button>
-//         </div>
-//       </section>
-      
-//       <section className="banner">
-//         {/* Add banner content */}
-//       </section>
-      
-//       <section className="tops">
-//         <h2><a href="#">TOPS</a></h2>
-//         {/* Add tops content */}
-//       </section>
-      
-//       <section className="maxi-dresses">
-//         <h2><a href="#">Maxi Dresses</a></h2>
-//         {/* Add maxi dresses content */}
-//       </section>
-      
-//       <section className="e-gift-cards">
-//         <h2>E-Gift Cards</h2>
-//         <button>Shop E-Gift Cards</button>
-//       </section>
-      
-//       <section className="mini-dresses">
-//         <h2><a href="#">Mini Dresses</a></h2>
-//         {/* Add mini dresses content */}
-//       </section>
-      
-//       <section className="swim-wears">
-//         <h2><a href="#">Swim Wears</a></h2>
-//         {/* Add swim wears content */}
-//       </section>
-//     </main>
-//   );
-// };
-
-// export default Home;
-
-
 import React from 'react';
+import Slider from 'react-slick';
 import '../styles/home.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import NewArrivals1 from '../assets/images/product3.webp';
 import NewArrivals2 from '../assets/images/product6.webp';
 import NewArrivals3 from '../assets/images/product15.webp'; 
@@ -132,6 +21,32 @@ import BestSellers7 from '../assets/images/product19.webp';
 import BestSellers8 from '../assets/images/product21.webp';
 import BestSellers9 from '../assets/images/product22.webp';
 
+import Top1 from '../assets/images/product_top2.webp';
+import Top2 from '../assets/images/product_top3.webp';
+import Top3 from '../assets/images/product_top4.webp'; 
+import Top4 from '../assets/images/product_top5.webp'; 
+
+import maxi1 from '../assets/images/product_maxi4.webp';
+import maxi2 from '../assets/images/product_maxi3.webp';
+import maxi3 from '../assets/images/product_maxi5.webp'; 
+import maxi4 from '../assets/images/product_maxi2.webp'; 
+
+import mini1 from '../assets/images/product_mini1.webp';
+import mini2 from '../assets/images/product_mini3.webp';
+import mini3 from '../assets/images/product_mini4.webp'; 
+import mini4 from '../assets/images/product_mini5.webp'; 
+
+import swim1 from '../assets/images/product_swim1.webp';
+import swim2 from '../assets/images/product_swim2.webp';
+import swim3 from '../assets/images/product_swim4.webp'; 
+import swim4 from '../assets/images/product_swim3.webp'; 
+
+import Hero1 from '../assets/images/hero1.jpg';
+import Hero2 from '../assets/images/hero2.jpg';
+import Hero3 from '../assets/images/hero3.jpg';
+import Hero4 from '../assets/images/hero4.jpg';
+import Hero5 from '../assets/images/hero5.jpg';
+
 const products = [
   {
     image: NewArrivals1,
@@ -143,11 +58,11 @@ const products = [
     image: NewArrivals2,
     name: 'Button Down Oversized Top',
     price: 'Rs 4,450.00 LKR',
-    colors: ['#000000', '#FFFFFF', '#b9c0ff1'],
+    colors: ['#000000', '#FFFFFF', '#e06c71'],
   },
   {
     image: NewArrivals3,
-    name: 'Button Down Short Sleeved Crop Top',
+    name: 'Button Down Crop Top',
     price: 'Rs 3,500.00 LKR',
     colors: ['#bc85a3', '#000000', '#b1cfeb'],
   },
@@ -161,7 +76,7 @@ const products = [
     image: NewArrivals5,
     name: 'Corset Detailed Back Tieup Top',
     price: 'Rs 2,590.00 LKR',
-    colors: ['#000000', '#FFFFFF', '#FF0000'],
+    colors: ['#000000', '#FFFFFF', '#a7cec9'],
   },
   {
     image: NewArrivals6,
@@ -228,6 +143,114 @@ const bestSellers = [
     },
   ];
 
+  const Tops = [
+    {
+      image: Top1,
+      name: 'Bustier Detail Front Tie-up Top',
+      price: 'Rs 3,450.00 LKR',
+      colors: ['#809bce', '#b8e0d2', '#f6f7b0'],
+    },
+    {
+      image: Top2,
+      name: 'Halter Neck Crop Top',
+      price: 'Rs 4,450.00 LKR',
+      colors: ['#000000', '#FFFFFF', '#e06c71'],
+    },
+    {
+      image: Top3,
+      name: 'Corset Detail Back Tie-up Top',
+      price: 'Rs 3,500.00 LKR',
+      colors: ['#bc85a3', '#000000', '#b1cfeb'],
+    },
+    {
+      image: Top4,
+      name: 'Short Sleeve Oversize Shirt',
+      price: 'Rs 3,450.00 LKR',
+      colors: ['#faf9f6', '#e7c6ff', '#000000'],
+    }
+  ];
+
+  const maxidress = [
+    {
+      image: maxi1,
+      name: 'Bustier Detail Front Tie-up Top',
+      price: 'Rs 3,450.00 LKR',
+      colors: ['#809bce', '#b8e0d2', '#f6f7b0'],
+    },
+    {
+      image: maxi2,
+      name: 'Halter Neck Crop Top',
+      price: 'Rs 4,450.00 LKR',
+      colors: ['#000000', '#FFFFFF', '#e06c71'],
+    },
+    {
+      image: maxi3,
+      name: 'Corset Detail Back Tie-up Top',
+      price: 'Rs 3,500.00 LKR',
+      colors: ['#bc85a3', '#000000', '#b1cfeb'],
+    },
+    {
+      image: maxi4,
+      name: 'Short Sleeve Oversize Shirt',
+      price: 'Rs 3,450.00 LKR',
+      colors: ['#faf9f6', '#e7c6ff', '#000000'],
+    }
+  ];
+
+  const minidress = [
+    {
+      image: mini1,
+      name: 'Bustier Detail Front Tie-up Top',
+      price: 'Rs 3,450.00 LKR',
+      colors: ['#809bce', '#b8e0d2', '#f6f7b0'],
+    },
+    {
+      image: mini2,
+      name: 'Halter Neck Crop Top',
+      price: 'Rs 4,450.00 LKR',
+      colors: ['#000000', '#FFFFFF', '#e06c71'],
+    },
+    {
+      image: mini3,
+      name: 'Corset Detail Back Tie-up Top',
+      price: 'Rs 3,500.00 LKR',
+      colors: ['#bc85a3', '#000000', '#b1cfeb'],
+    },
+    {
+      image: mini4,
+      name: 'Short Sleeve Oversize Shirt',
+      price: 'Rs 3,450.00 LKR',
+      colors: ['#faf9f6', '#e7c6ff', '#000000'],
+    }
+  ];
+
+  const swimWear = [
+    {
+      image: swim1,
+      name: 'Bustier Detail Front Tie-up Top',
+      price: 'Rs 3,450.00 LKR',
+      colors: ['#809bce', '#b8e0d2', '#f6f7b0'],
+    },
+    {
+      image: swim2,
+      name: 'Halter Neck Crop Top',
+      price: 'Rs 4,450.00 LKR',
+      colors: ['#000000', '#FFFFFF', '#e06c71'],
+    },
+    {
+      image: swim3,
+      name: 'Corset Detail Back Tie-up Top',
+      price: 'Rs 3,500.00 LKR',
+      colors: ['#bc85a3', '#000000', '#b1cfeb'],
+    },
+    {
+      image: swim4,
+      name: 'Short Sleeve Oversize Shirt',
+      price: 'Rs 3,450.00 LKR',
+      colors: ['#faf9f6', '#e7c6ff', '#000000'],
+    }
+  ];
+
 const Home = () => {
 
     const scrollLeft = () => {
@@ -246,12 +269,28 @@ const Home = () => {
         document.getElementById('product-row2').scrollLeft += 300;
     };
 
+    const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
+    };
+  
+    const sliderImages = [Hero1, Hero2, Hero3, Hero4, Hero5];
+
   return (
     <main className="home">
       <section className="hero">
-        <div className="slider">
-          {/* Add sliding images here */}
-        </div>
+      <Slider {...settings}>
+          {sliderImages.map((image, index) => (
+            <div key={index}>
+              <img src={image} alt={`Slide ${index + 1}`} className="slider-image"/>
+            </div>
+          ))}
+        </Slider>
       </section>
       
       <section className="new-arrivals">
@@ -306,12 +345,40 @@ const Home = () => {
       
       <section className="tops">
         <h2><a href="#">TOPS</a></h2>
-        {/* Add tops content */}
+        <div className="product-grid">
+          {Tops.map((product3, index) => (
+            <div className="product-box" key={index} style={{ backgroundImage: `url(${product3.image})` }}>
+              <div className="product-description">
+                <h3>{product3.name}</h3>
+                <p>{product3.price}</p>
+                <div className="product-colors">
+                  {product3.colors.map((color, colorIndex) => (
+                    <span key={colorIndex} style={{ backgroundColor: color }}></span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
       
       <section className="maxi-dresses">
         <h2><a href="#">Maxi Dresses</a></h2>
-        {/* Add maxi dresses content */}
+        <div className="product-grid">
+          {maxidress.map((product4, index) => (
+            <div className="product-box" key={index} style={{ backgroundImage: `url(${product4.image})` }}>
+              <div className="product-description">
+                <h3>{product4.name}</h3>
+                <p>{product4.price}</p>
+                <div className="product-colors">
+                  {product4.colors.map((color, colorIndex) => (
+                    <span key={colorIndex} style={{ backgroundColor: color }}></span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
       
       <section className="e-gift-cards">
@@ -321,12 +388,40 @@ const Home = () => {
       
       <section className="mini-dresses">
         <h2><a href="#">Mini Dresses</a></h2>
-        {/* Add mini dresses content */}
+        <div className="product-grid">
+          {minidress.map((product4, index) => (
+            <div className="product-box" key={index} style={{ backgroundImage: `url(${product4.image})` }}>
+              <div className="product-description">
+                <h3>{product4.name}</h3>
+                <p>{product4.price}</p>
+                <div className="product-colors">
+                  {product4.colors.map((color, colorIndex) => (
+                    <span key={colorIndex} style={{ backgroundColor: color }}></span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
       
       <section className="swim-wears">
         <h2><a href="#">Swim Wears</a></h2>
-        {/* Add swim wears content */}
+        <div className="product-grid">
+          {swimWear.map((product4, index) => (
+            <div className="product-box" key={index} style={{ backgroundImage: `url(${product4.image})` }}>
+              <div className="product-description">
+                <h3>{product4.name}</h3>
+                <p>{product4.price}</p>
+                <div className="product-colors">
+                  {product4.colors.map((color, colorIndex) => (
+                    <span key={colorIndex} style={{ backgroundColor: color }}></span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </main>
   );

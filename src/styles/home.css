@@ -1,12 +1,18 @@
 .home {
     padding: 20px;
   }
-  
-  .hero .slider {
+
+  .hero {
     width: 100%;
-    height: 400px;
-    background-color: #eaeaea;
-    /* Add sliding functionality */
+    position: relative;
+  }
+  
+  .slider-image {
+    width: 100%;
+    height: 600px; /* Adjust height as needed */
+    /* object-fit: cover;  */
+    background-size: cover; 
+    background-repeat: no-repeat; 
   }
   
   .new-arrivals, .best-sellers, .tops, .maxi-dresses, .mini-dresses, .swim-wears {
@@ -85,62 +91,43 @@
     text-align: center;
 }
 
-  
-
-  /* New Arrivals */
-  .product-row{
+  /* New Arrivals, Best Sellers */
+  .product-row, .product-row2{
     display: flex;
     overflow-x: hidden;
     scroll-behavior: smooth;
     width: 100%;
   }
   
-  .prev,
-  .next {
+  .prev, .next,
+  .prev2, .next2 {
     background: none;
     border: none;
     font-size: 30px;
     cursor: pointer;
     position: absolute;
-    top: 120%;
+    top: 145%;
     transform: translateY(-50%);
     z-index: 1;
   }
 
-  .prev {
+  .prev, .prev2 {
     left: 0;
   }
 
-  .next {
+  .next, .next2 {
     right: 0;
   }
-  
-  /* Best Sellers */
-  .product-row2{
+
+  .prev2, .next2{
+    top: 230%;
+  }
+
+  /* Tops */
+  .product-grid {
     display: flex;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    width: 100%;
-  }
-
-  .prev2,
-  .next2 {
-    background: none;
-    border: none;
-    font-size: 30px;
-    cursor: pointer;
-    position: absolute;
-    top: 205%;
-    transform: translateY(-50%);
-    z-index: 1;
-  }
-
-  .prev2 {
-    left: 0;
-  }
-
-  .next2 {
-    right: 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .banner {
@@ -168,3 +155,16 @@
     background-color: #333;
   }
   
+  @media (max-width: 768px) {
+    .carousel-container, .carousel-container2 {
+      flex-direction: column;
+    }
+  
+    .product-row, .product-row2 {
+      justify-content: center;
+    }
+  
+    .product-box {
+      flex: 0 0 200px;
+    }
+  }

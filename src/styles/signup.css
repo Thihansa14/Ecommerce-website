@@ -1,0 +1,114 @@
+.signup-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+  }
+  
+  p {
+    color: #555;
+  }
+  
+  .google-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  
+  .google-signup img {
+    margin-right: 0.5rem;
+    height: 30px;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+  }
+  
+  .divider span {
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+  }
+  
+  .divider p {
+    margin: 0 1rem;
+    color: #888;
+  }
+  
+  form {
+    text-align: left;
+  }
+  
+  label {
+    font-size: 14px;
+    display: block;
+    margin: 0.5rem 0 0.25rem;
+  }
+  
+  input {
+    font-size: 14px;
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .password-input {
+    position: relative;
+  }
+  
+  .password-input i {
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .terms {
+    display: flex;
+    align-items: center;
+  }
+  
+  .terms input {
+    margin-right: 1px;
+  }
+  
+  .signup-button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #5086C1;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .signup-button:hover {
+    background-color: #005187;
+  }
+  
+  .signin-link {
+    margin-top: 1rem;
+  }
+  
+  .signin-link span {
+    color: #000;
+    cursor: pointer;
+    text-decoration: underline;
+    color: #005187;
+  }
+  

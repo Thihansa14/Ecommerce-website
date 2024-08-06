@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+  }
+  
+  .login-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .login-left {
+    flex: 1;
+    background-color: #e1edff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  .login-left img {
+    max-width: 200%;
+    height:600px;
+    background-size: cover;
+  }
+  
+  .login-left h1 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .login-left p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .login-right {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+  
+  .login-right h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+  }
+  
+  .login-right form {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-right label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .login-right input {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .forgot-password {
+    align-self: flex-end;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #005187;
+    text-decoration: none;
+  }
+  
+  .forgot-password:hover {
+    text-decoration: underline;
+  }
+  
+  .login-right button {
+    padding: 15px;
+    background-color: #5086C1;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .login-right button:hover {
+    background-color: #005187;
+  }
+  
+  .divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px 0;
+  }
+  
+  .divider span {
+    flex: 1;
+    height: 1px;
+    background-color: #ddd;
+  }
+  
+  .divider p {
+    margin: 0 10px;
+    color: #777;
+  }
+  
+  .button .google-sign-in {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .google-sign-in img {
+    margin-right: 10px;
+  }
+  
+  .google-sign-in:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .create-account {
+    color: #005187;
+    text-decoration: none;
+  }
+  
+  .create-account:hover {
+    text-decoration: underline;
+  }
+  

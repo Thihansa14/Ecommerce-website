@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/login.css';
 import loginImage from '../assets/images/login.webp';
+import googleIcon from '../assets/images/google.webp';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Login = () => {
         <img src={loginImage} alt="Mimosa" />
       </div>
       <div className="login-right">
-        <h2>MIMOSA</h2>
+        <h2>MIMOSA LOGIN</h2>
         <form>
           <label htmlFor="username">Username or email</label>
           <input type="text" id="username" name="username" defaultValue="johnsmith007" />
@@ -32,9 +33,9 @@ const Login = () => {
           <span></span>
         </div>
         <button className="google-sign-in">
-          <i className="fab fa-google"></i> Sign in with Google
+        <img src={googleIcon} alt="Google icon" /> Sign up with Google
         </button>
-        <p>Are you new? <a href="#" className="create-account">Create an Account</a></p>
+        <p>Are you new? <a href="/Signup.jsx" className="create-account">Create an Account</a></p>
       </div>
     </div>
   );

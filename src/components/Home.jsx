@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import '../styles/home.css';
 import 'slick-carousel/slick/slick.css';
@@ -252,6 +252,7 @@ const bestSellers = [
   ];
 
 const Home = () => {
+  const [showBackToTop, setShowBackToTop] = useState(false);
 
     const scrollLeft = () => {
         document.getElementById('product-row').scrollLeft -= 300;
@@ -269,6 +270,19 @@ const Home = () => {
         document.getElementById('product-row2').scrollLeft += 300;
     };
 
+    const handleScroll = () => {
+        if (window.scrollY > 300) { // Adjust this value as needed
+            setShowBackToTop(true);
+        } else {
+            setShowBackToTop(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     const settings = {
       dots: true,
       infinite: true,
@@ -280,6 +294,7 @@ const Home = () => {
     };
   
     const sliderImages = [Hero1, Hero2, Hero3, Hero4, Hero5];
+
 
   return (
     <main className="home">
@@ -423,6 +438,12 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+      {showBackToTop && (
+        <button className="back-to-top" onClick={() => window.scrollTo(0, 0)}>
+          ↑ 
+        </button>
+      )}
     </main>
   );
 };

@@ -1,8 +1,40 @@
-.signup-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+}
+
+.signup-container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.signup-left{
+    flex: 1;
+    background-color: #e1edff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
     text-align: center;
+}
+
+.signup-left img {
+    max-width: 80%;
+    height:auto;
+    background-size: cover;
+  }
+
+.signup-right {
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
   }
   
   h1 {
@@ -18,12 +50,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    padding: 0.5rem;
+    width: 50%;
+    padding: 0.3rem;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #fff;
     cursor: pointer;
+    margin: 1rem 0;
   }
   
   .google-signup img {
@@ -34,7 +67,7 @@
   .divider {
     display: flex;
     align-items: center;
-    margin: 1rem 0;
+    margin: 0.2rem 0;
   }
   
   .divider span {
@@ -55,7 +88,7 @@
   label {
     font-size: 14px;
     display: block;
-    margin: 0.5rem 0 0.25rem;
+    margin: 1rem 0 0.25rem;
   }
   
   input {
@@ -79,13 +112,10 @@
   }
   
   .terms {
-    display: flex;
+    display:flex;
     align-items: center;
   }
-  
-  .terms input {
-    margin-right: 1px;
-  }
+
   
   .signup-button {
     width: 100%;

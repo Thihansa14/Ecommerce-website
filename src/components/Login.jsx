@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/login.css';
 import loginImage from '../assets/images/login.webp';
@@ -6,10 +6,35 @@ import googleIcon from '../assets/images/google.webp';
 
 const Login = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
 
-  const handleSignIn = () => {
-    // Navigate to the Home page
-    navigate('/Home');
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch('http://localhost:5000/api/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      console.log('Response Data:', data); // Log response data
+      if (response.ok) {
+        navigate('/home');
+      } else {
+        console.error('Error:', data.msg || 'Unknown error');
+      }
+    } catch (error) {
+      console.error('Fetch Error:', error);
+    }
+  };
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -19,13 +44,27 @@ const Login = () => {
       </div>
       <div className="login-right">
         <h2>MIMOSA LOGIN</h2>
-        <form>
-          <label htmlFor="username">Username or email</label>
-          <input type="text" id="username" name="username" defaultValue="johnsmith007" />
+        <form onSubmit={handleSignIn}>
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
           <label htmlFor="password">Password</label>
-          <input type="password" id="password" name="password" defaultValue="*********" />
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
           <a href="#" className="forgot-password">Forgot password?</a>
-          <button type="button" onClick={handleSignIn}>Sign in</button>
+          <button type="submit">Sign in</button>
         </form>
         <div className="divider">
           <span></span>
@@ -33,9 +72,9 @@ const Login = () => {
           <span></span>
         </div>
         <button className="google-sign-in">
-        <img src={googleIcon} alt="Google icon" /> Sign up with Google
+          <img src={googleIcon} alt="Google icon" /> Sign up with Google
         </button>
-        <p>Are you new? <a href="/Signup.jsx" className="create-account">Create an Account</a></p>
+        <p>Are you new? <a href="/Signup" className="create-account">Create an Account</a></p>
       </div>
     </div>
   );

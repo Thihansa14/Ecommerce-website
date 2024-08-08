@@ -141,4 +141,18 @@ body {
     text-decoration: underline;
     color: #005187;
   }
+
+  .signup-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #28a745; /* Green for success messages */
+    text-align: center;
+  }
+  
+  .signup-message.error {
+    background-color: #dc3545; /* Red for error messages */
+  }
+  
   

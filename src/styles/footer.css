@@ -38,7 +38,7 @@
 
 .footer-column {
   flex: 1;
-  min-width: 200px;
+  min-width: 50px;
   margin-bottom: 20px;
 }
 

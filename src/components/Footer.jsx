@@ -25,7 +25,7 @@ const Footer = () => {
           <h3>About Us</h3>
           <a href="#">Our Story</a>
           <a href="#">Careers</a>
-          <a href="#">Press</a>
+          <a href="#">Visit Our Store</a>
         </div>
         <div className="footer-column">
           <h3>Terms & Conditions</h3>

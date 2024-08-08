@@ -47,6 +47,9 @@ import Hero3 from '../assets/images/hero3.jpg';
 import Hero4 from '../assets/images/hero4.jpg';
 import Hero5 from '../assets/images/hero5.jpg';
 
+import Banner from '../assets/images/store.webp';
+import Egift from '../assets/images/e-gift.webp';
+
 const products = [
   {
     image: NewArrivals1,
@@ -355,7 +358,14 @@ const Home = () => {
       </section>
       
       <section className="banner">
-        {/* Add banner content */}
+      <div className="banner-image">
+        <img src={Banner} alt="Banner" />
+      </div>
+      <div className="banner-content">
+        <h1 className="banner-title">Latest Arrivals Going Fast</h1>
+        <p className="banner-subtitle">Hurry up and order now, only few left.</p>
+        <button className="banner-button">SHOP NOW</button>
+      </div>
       </section>
       
       <section className="tops">
@@ -396,9 +406,15 @@ const Home = () => {
         </div>
       </section>
       
-      <section className="e-gift-cards">
-        <h2>E-Gift Cards</h2>
-        <button>Shop E-Gift Cards</button>
+      <section className="banner">
+      <div className="banner-image">
+        <img src={Egift} alt="Banner" />
+      </div>
+      <div className="e-gift-content">
+        <h1 className="banner-title">Gift your loved ones with a e-gift card.</h1>
+        {/* <p className="banner-subtitle">Hurry up and order now, only few left.</p> */}
+        <button className="banner-button">SHOP NOW</button>
+      </div>
       </section>
       
       <section className="mini-dresses">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../styles/signup.css'; // Ensure you create and adjust this CSS file as needed
-import loginImage from '../assets/images/login.webp';
+import '../styles/signup.css';
+import loginImage from '../assets/images/product_mini1.webp';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -12,9 +12,7 @@ const Signup = () => {
     password: '',
   });
 
-  const handleSignIn = () => {
-    navigate('/login');
-  };
+  const [message, setMessage] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -30,14 +28,18 @@ const Signup = () => {
         },
         body: JSON.stringify(formData),
       });
-      const data = await response.json();
+
+      const data = await response.json(); // Parse the JSON response
+
       if (response.ok) {
-        navigate('/login');
+        setMessage(data.msg || 'User registered successfully!'); // Use the response message
+        setTimeout(() => navigate('/login'), 2000); // Redirect after 2 seconds
       } else {
-        console.error(data.message);
+        setMessage(data.msg || 'An error occurred'); // Show error message from response
       }
     } catch (error) {
       console.error('Error:', error);
+      setMessage('An error occurred'); // Handle network or other errors
     }
   };
 
@@ -54,7 +56,7 @@ const Signup = () => {
         <h1>Create Your Account</h1>
         <p>Welcome to MIMOSA!</p>
         <button className="google-signup">
-          <img src="src\assets\images\google.webp" alt="Google icon" /> Sign up with Google
+          <img src="src/assets/images/google.webp" alt="Google icon" /> Sign up with Google
         </button>
         <div className="divider">
           <span></span>
@@ -77,11 +79,12 @@ const Signup = () => {
             <input type="checkbox" id="terms" name="terms" />
             <label htmlFor="terms">Subscribe to stay updated with new products and offers!</label>
           </div>
-          <button type="submit" className="signup-button" onClick={handleSignIn}>Continue</button>
+          <button type="submit" className="signup-button">Continue</button>
         </form>
         <p className="signin-link">
           Already have an account? <span onClick={handleSignInClick}>Sign in</span>
         </p>
+        {message && <div className="signup-message">{message}</div>}
       </div>
     </div>
   );

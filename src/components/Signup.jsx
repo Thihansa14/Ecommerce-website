@@ -29,17 +29,17 @@ const Signup = () => {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json(); // Parse the JSON response
+      const data = await response.text(); // Change from response.json() to response.text()
 
       if (response.ok) {
-        setMessage(data.msg || 'User registered successfully!'); // Use the response message
+        setMessage('User registered successfully!');
         setTimeout(() => navigate('/login'), 2000); // Redirect after 2 seconds
       } else {
-        setMessage(data.msg || 'An error occurred'); // Show error message from response
+        setMessage(data || 'An error occurred'); // Use the raw text response
       }
     } catch (error) {
       console.error('Error:', error);
-      setMessage('An error occurred'); // Handle network or other errors
+      setMessage('An error occurred');
     }
   };
 

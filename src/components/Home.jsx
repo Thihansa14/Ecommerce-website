@@ -4,8 +4,8 @@ import '../styles/home.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import NewArrivals1 from '../assets/images/product3.webp';
-import NewArrivals2 from '../assets/images/product6.webp';
+import NewArrivals1 from '../assets/images/product3.jpg';
+import NewArrivals2 from '../assets/images/product6.jpg';
 import NewArrivals3 from '../assets/images/product15.webp'; 
 import NewArrivals4 from '../assets/images/product2.webp'; 
 import NewArrivals5 from '../assets/images/product12.webp'; 
@@ -22,24 +22,24 @@ import BestSellers8 from '../assets/images/product21.webp';
 import BestSellers9 from '../assets/images/product22.webp';
 
 import Top1 from '../assets/images/product_top2.webp';
-import Top2 from '../assets/images/product_top3.webp';
+import Top2 from '../assets/images/product_top3.jpg';
 import Top3 from '../assets/images/product_top4.webp'; 
 import Top4 from '../assets/images/product_top5.webp'; 
 
-import maxi1 from '../assets/images/product_maxi4.webp';
-import maxi2 from '../assets/images/product_maxi3.webp';
-import maxi3 from '../assets/images/product_maxi5.webp'; 
+import maxi1 from '../assets/images/product_maxi4.jpg';
+import maxi2 from '../assets/images/product_maxi3.jpg';
+import maxi3 from '../assets/images/product_maxi5.jpg'; 
 import maxi4 from '../assets/images/product_maxi2.webp'; 
 
-import mini1 from '../assets/images/product_mini1.webp';
-import mini2 from '../assets/images/product_mini3.webp';
-import mini3 from '../assets/images/product_mini4.webp'; 
-import mini4 from '../assets/images/product_mini5.webp'; 
+import mini1 from '../assets/images/product_mini1.jpg';
+import mini2 from '../assets/images/product_mini3.jpg';
+import mini3 from '../assets/images/product_mini4.jpg'; 
+import mini4 from '../assets/images/product_mini5.jpg'; 
 
-import swim1 from '../assets/images/product_swim1.webp';
+import swim1 from '../assets/images/product_swim1.jpg';
 import swim2 from '../assets/images/product_swim2.webp';
-import swim3 from '../assets/images/product_swim4.webp'; 
-import swim4 from '../assets/images/product_swim3.webp'; 
+import swim3 from '../assets/images/product_swim4.jpg'; 
+import swim4 from '../assets/images/product_swim3.jpg'; 
 
 import Hero1 from '../assets/images/hero1.jpg';
 import Hero2 from '../assets/images/hero2.jpg';
@@ -47,7 +47,7 @@ import Hero3 from '../assets/images/hero3.jpg';
 import Hero4 from '../assets/images/hero4.jpg';
 import Hero5 from '../assets/images/hero5.jpg';
 
-import Banner from '../assets/images/store.webp';
+import Banner from '../assets/images/store.jpg';
 import Egift from '../assets/images/e-gift.webp';
 
 const products = [

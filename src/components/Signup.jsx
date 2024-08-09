@@ -13,6 +13,7 @@ const Signup = () => {
   });
 
   const [message, setMessage] = useState('');
+  const [isError, setIsError] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,13 +34,16 @@ const Signup = () => {
 
       if (response.ok) {
         setMessage('User registered successfully!');
+        setIsError(false);
         setTimeout(() => navigate('/login'), 2000); // Redirect after 2 seconds
       } else {
         setMessage(data || 'An error occurred'); // Use the raw text response
+        setIsError(true);
       }
     } catch (error) {
       console.error('Error:', error);
       setMessage('An error occurred');
+      setIsError(true);
     }
   };
 
@@ -84,7 +88,7 @@ const Signup = () => {
         <p className="signin-link">
           Already have an account? <span onClick={handleSignInClick}>Sign in</span>
         </p>
-        {message && <div className="signup-message">{message}</div>}
+        {message && <div className={`signup-message ${isError ? 'error' : ''}`}>{message}</div>}
       </div>
     </div>
   );

@@ -11,6 +11,8 @@ const Login = () => {
     password: '',
   });
 
+  const [message, setMessage] = useState('');
+
   const handleSignIn = async (e) => {
     e.preventDefault();
     try {
@@ -26,10 +28,11 @@ const Login = () => {
       if (response.ok) {
         navigate('/home');
       } else {
-        console.error('Error:', data.msg || 'Unknown error');
+        setMessage(data.msg || 'Invalid email or password');
       }
     } catch (error) {
       console.error('Fetch Error:', error);
+      setMessage('An error occurred during login'); 
     }
   };
 
@@ -75,6 +78,7 @@ const Login = () => {
           <img src={googleIcon} alt="Google icon" /> Sign up with Google
         </button>
         <p>Are you new? <a href="/Signup" className="create-account">Create an Account</a></p>
+        {message && <div className="login-message">{message}</div>}
       </div>
     </div>
   );

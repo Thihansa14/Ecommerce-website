@@ -140,3 +140,9 @@ body {
     text-decoration: underline;
   }
   
+  .login-message {
+    margin-top: 10px;
+    font-size: 14px;
+    color: red; /* Set the text color to red for error messages */
+  }
+  

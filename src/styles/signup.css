@@ -144,15 +144,14 @@ body {
 
   .signup-message {
     margin-top: 10px;
-    padding: 10px;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #28a745; /* Green for success messages */
-    text-align: center;
+    font-size: 14px;
+    color: rgb(21, 161, 103);
   }
   
   .signup-message.error {
-    background-color: #dc3545; /* Red for error messages */
+    color: #e84152; 
+    margin-top: 10px;
+    font-size: 14px;
   }
   
   

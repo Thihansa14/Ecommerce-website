@@ -5,7 +5,7 @@
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "frontend/dist"  // Ensure your frontend build outputs to this directory
+        "distDir": "frontend/dist"  
       }
     },
     {
@@ -16,11 +16,11 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/backend/src/server.js"  // Route API requests to your backend
+      "dest": "/backend/src/server.js" 
     },
     {
       "src": "/(.*)",
-      "dest": "/frontend/dist/index.html"  // Serve the frontend from index.html for all other routes
+      "dest": "/frontend/dist/index.html"  
     }
   ]
 }

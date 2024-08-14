@@ -20,6 +20,10 @@
   flex-wrap: wrap;
 }
 
+.header-middle .nav-item {
+  position: relative;
+}
+
 .header-middle a {
   margin: 0 10px;
   color: #555;
@@ -29,6 +33,35 @@
 }
 
 .header-middle a:hover {
+  color: #000;
+}
+
+.header-middle .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f3fdfe;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.header-middle .nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+.header-middle .dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #555;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s ease;
+}
+
+.header-middle .dropdown-menu a:hover {
   color: #000;
 }
 

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/header.css';
@@ -6,6 +5,8 @@ import '../styles/header.css';
 const Header = () => {
   const [showAccountOptions, setShowAccountOptions] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [showDropdown, setShowDropdown] = useState({});
+
   const navigate = useNavigate();
 
   const toggleAccountOptions = () => {
@@ -28,18 +29,81 @@ const Header = () => {
     navigate('/home');
   };
 
+  const handleMouseEnter = (category) => {
+    setShowDropdown({ ...showDropdown, [category]: true });
+  };
+
+  const handleMouseLeave = (category) => {
+    setShowDropdown({ ...showDropdown, [category]: false });
+  };
+
   return (
     <header className="header">
       <div className="header-left">
         <h1 className="shop-name" onClick={handleHomeClick}>UrbanWeave</h1>
       </div>
       <nav className="header-middle">
-        <a href="#">New Arrivals</a>
-        <a href="#">Dresses</a>
-        <a href="#">Tops</a>
-        <a href="#">Shorts</a>
+        <div
+          className="nav-item"
+          onMouseEnter={() => handleMouseEnter('newArrivals')}
+          onMouseLeave={() => handleMouseLeave('newArrivals')}
+        >
+          <a href="#">New Arrivals</a>
+          {showDropdown.newArrivals && (
+            <div className="dropdown-menu">
+              <a href="#">Dresses</a>
+              <a href="#">Tops</a>
+              <a href="#">Pants</a>
+              <a href="#">Party wear</a>
+            </div>
+          )}
+        </div>
+        <div
+          className="nav-item"
+          onMouseEnter={() => handleMouseEnter('dresses')}
+          onMouseLeave={() => handleMouseLeave('dresses')}
+        >
+          <a href="#">Dresses</a>
+          {showDropdown.dresses && (
+            <div className="dropdown-menu">
+              <a href="/mini-dresses">Mini Dresses</a>
+              <a href="#">Midi Dresses</a>
+              <a href="#">Maxi Dresses</a>
+            </div>
+          )}
+        </div>
+        <div
+          className="nav-item"
+          onMouseEnter={() => handleMouseEnter('tops')}
+          onMouseLeave={() => handleMouseLeave('tops')}
+        >
+          <a href="#">Tops</a>
+          {showDropdown.tops && (
+            <div className="dropdown-menu">
+              <a href="#">Crop Tops</a>
+              <a href="#">Tank Tops</a>
+              <a href="#">T-Shirts</a>
+              <a href="#">Blouses</a>
+            </div>
+          )}
+        </div>
+        <div
+          className="nav-item"
+          onMouseEnter={() => handleMouseEnter('pants')}
+          onMouseLeave={() => handleMouseLeave('pants')}
+        >
+          <a href="#">Pants</a>
+          {showDropdown.pants && (
+            <div className="dropdown-menu">
+              <a href="#">Denims</a>
+              <a href="#">Cargo Pants</a>
+              <a href="#">Office Pants</a>
+            </div>
+          )}
+        </div>
         <a href="#">Swim Wear</a>
-        <a href="#">Gift Cards</a>
+        <a href="#">Party Wear</a>
+        <a href="#">Accessories</a>
       </nav>
       <div className="header-right">
         <i className="fas fa-search search-icon"></i>

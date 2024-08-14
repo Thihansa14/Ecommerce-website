@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import MiniProduct from './components/MiniProduct';
 import './styles/index.css';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/mini-dresses" element={<MiniProduct />} />
         </Routes>
         <Footer />
       </div>

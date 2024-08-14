@@ -41,7 +41,7 @@ const Footer = () => {
         </div>
       </div><hr />
       <div className="footer-bottom">
-        <p>© 2024 MIMOSA | All Rights Reserved | Designed by Thihansa Akmeemana</p>
+        <p>© 2024 UrbanWeave | All Rights Reserved | Designed by Thihansa Akmeemana</p>
       </div>
     </footer>
   );

@@ -24,7 +24,7 @@ import mini20 from '../assets/images/product_mini18.webp';
 
 const MiniProduct = () => {
   const productsmini = [
-    { name: "Camila Puff Sleeve Dress", price: 7590, image: mini5 , colors: ["#809bce", "#a7cec9", "#e7c6ff"], isNew: true },
+    {id:1, name: "Camila Puff Sleeve Dress", price: 7590, sku: "159291-2024-133-6", image: mini5 , colors: ["#809bce", "#a7cec9", "#e7c6ff"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
     { name: "Ella Frill Short Dress", price: 7490, image: mini6 , colors: ["#e06c71", "#f6f7b0", "#bc85a3"], isNew: true },
     { name: "Clara Layer Short Dress", price: 6790, image: mini7 , colors: ["#bc85a3", "#000000", "#faf9f6"], isNew: true },
     { name: "Molly Button Down Midi Dress", price: 6990, image: mini8, colors: ["#faf9f6", "#e7c6ff", "#000000"], isNew: true },
@@ -46,16 +46,43 @@ const MiniProduct = () => {
     { name: "Molly Button Down Midi Dress", price: 6990, image: mini20, colors: ["#faf9f6", "#e7c6ff", "#000000"], isNew: true }
   ];
 
+   const sizes = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "UK 4", "UK 6", "UK 8", "UK 10", "UK 12", "UK 14"];
+
   return (
     <div className="product-page">
       <div className="left-column">
         <div className="filter-section">
-          <h4>Availability</h4>
+          <h4>CATEGORIES</h4> <hr />
+          <ul className="categories-list">
+            <li><a href="/mini-dresses">Mini Dresses</a></li>
+            <li><a href="#Maxi Dresses">Maxi Dresses</a></li>
+            <li><a href="#Midi Dresses">Midi Dresses</a></li>
+            <li><a href="#T-shirts">T-shirts</a></li>
+            <li><a href="#Crop Tops">Crop Tops</a></li>
+            <li><a href="#Tank Tops">Tank Tops</a></li>
+            <li><a href="#Blouses">Blouses</a></li>
+            <li><a href="#Cargo Pants">Cargo Pants</a></li>
+            <li><a href="#Denims">Denims</a></li>
+            <li><a href="#Office Trousers">Office Trousers</a></li>
+            <li><a href="#Party Wear">Party Wear</a></li>
+            <li><a href="#Accessories">Accessories</a></li>
+          </ul>
+        </div>
+        <div className="filter-section">
+          <h4>SIZE</h4> <hr />
+          <div className="sizes">
+            {sizes.map((size, index) => (
+              <span key={index} className="size">{size}</span>
+            ))}
+          </div>
+        </div>
+        <div className="filter-section">
+          <h4>AVAILABILITY</h4> <hr />
           <label><input type="checkbox" /> In Stock(256)</label>
           <label><input type="checkbox" /> Out Of Stock(247)</label>
         </div>
         <div className="filter-section">
-          <h4>Price</h4>
+          <h4>PRICE</h4> <hr />
           <input type="range" min="0" max="12900" />
           <div className="price-range">
             <span>Rs 0</span>
@@ -63,7 +90,7 @@ const MiniProduct = () => {
           </div>
         </div>
         <div className="filter-section">
-          <h4>Color</h4>
+          <h4>COLOR</h4> <hr />
           <div className="colors">
           <span className="color" style={{ backgroundColor: '#000000' }}></span>
             <span className="color" style={{ backgroundColor: '#ff8ecc' }}></span>

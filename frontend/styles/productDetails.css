@@ -1,0 +1,134 @@
+/* src/styles/productDetails.css
+.product-details-page {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .left-column {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  
+  .thumbnail-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .thumbnail {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+  }
+  
+  .thumbnail.active, .thumbnail:hover {
+    opacity: 1;
+  }
+  
+  .right-column {
+    width: 60%;
+    padding-left: 40px;
+  }
+  
+  .availability {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .in-stock {
+    color: green;
+  }
+  
+  .sku {
+    color: #555;
+  }
+  
+  h2 {
+    color: #333;
+  }
+  
+  .colors, .sizes {
+    margin-bottom: 20px;
+  }
+  
+  .color-options, .size-options {
+    display: flex;
+  }
+  
+  .color, .size {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+  }
+  
+  .size {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 5px 10px;
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .quantity button {
+    width: 30px;
+    height: 30px;
+    background: #ddd;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .quantity span {
+    width: 50px;
+    text-align: center;
+  }
+  
+  .add-to-cart, .add-to-wishlist {
+    width: 100%;
+    padding: 15px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .add-to-wishlist {
+    background-color: #555;
+  }
+  
+  .additional-info {
+    margin-top: 20px;
+  }
+  
+  .additional-info .section {
+    margin-bottom: 20px;
+  }
+  
+  .additional-info h3 {
+    margin-bottom: 10px;
+  }
+   */

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/miniProduct.css';
+import { useNavigate } from 'react-router-dom';
 
 import mini1 from '../assets/images/product_mini19.webp';
 import mini2 from '../assets/images/product_mini3.jpg';
@@ -7,6 +8,8 @@ import mini3 from '../assets/images/product_mini4.jpg';
 import mini4 from '../assets/images/product_mini5.jpg'; 
 import mini5 from '../assets/images/product_mini2.webp'; 
 import mini6 from '../assets/images/product_mini1.webp';
+import mini6_img2 from '../assets/images/product_mini1_img2.webp'
+import mini6_img3 from '../assets/images/product_mini1_img3.webp'
 import mini7 from '../assets/images/product_mini3.webp';
 import mini8 from '../assets/images/product_mini7.webp'; 
 import mini9 from '../assets/images/product_mini8.webp'; 
@@ -23,30 +26,36 @@ import mini19 from '../assets/images/product_mini17.webp';
 import mini20 from '../assets/images/product_mini18.webp'; 
 
 const MiniProduct = () => {
+  const navigate = useNavigate();
+  
   const productsmini = [
-    {id:1, name: "Camila Puff Sleeve Dress", price: 7590, sku: "159291-2024-133-6", image: mini5 , colors: ["#809bce", "#a7cec9", "#e7c6ff"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
-    { name: "Ella Frill Short Dress", price: 7490, image: mini6 , colors: ["#e06c71", "#f6f7b0", "#bc85a3"], isNew: true },
-    { name: "Clara Layer Short Dress", price: 6790, image: mini7 , colors: ["#bc85a3", "#000000", "#faf9f6"], isNew: true },
-    { name: "Molly Button Down Midi Dress", price: 6990, image: mini8, colors: ["#faf9f6", "#e7c6ff", "#000000"], isNew: true },
-    { name: "Flare and Flair Dress", price: 7590, image: mini1 , colors: ["#000000", "#FFFFFF", "#a7cec9"], isNew: true },
-    { name: "Ella Frill Short Dress", price: 7490, image: mini2 , colors: ["#000000", "#acb5af", "#d2a3a9"], isNew: true },
-    { name: "Clara Layer Short Dress", price: 6790, image: mini3 , colors: ["#809bce", "#b8e0d2", "#f6f7b0"], isNew: true },
-    { name: "Molly Button Down Midi Dress", price: 6990, image: mini4, colors: ["#bc85a3", "#000000", "#b1cfeb"], isNew: true },
-    { name: "Flare and Flair Dress", price: 7590, image: mini9 , colors: ["#faf9f6", "#e7c6ff", "#000000"], isNew: true },
-    { name: "Ella Frill Short Dress", price: 7490, image: mini10 , colors: ["#000000", "#FFFFFF", "#a7cec9"], isNew: true },
-    { name: "Clara Layer Short Dress", price: 6790, image: mini11 , colors: ["#faf9f6", "#e7c6ff", "#000000"], isNew: true },
-    { name: "Molly Button Down Midi Dress", price: 6990, image: mini12, colors: ["#809bce", "#b8e0d2", "#f6f7b0"], isNew: true },
-    { name: "Clara Layer Short Dress", price: 6790, image: mini13 , colors: ["#000000", "#FFFFFF", "#e06c71"], isNew: true },
-    { name: "Molly Button Down Midi Dress", price: 6990, image: mini14, colors: ["#bc85a3", "#000000", "#b1cfeb"], isNew: true },
-    { name: "Clara Layer Short Dress", price: 6790, image: mini15 , colors: ["#faf9f6", "#e7c6ff", "#000000"], isNew: true },
-    { name: "Molly Button Down Midi Dress", price: 6990, image: mini16, colors: ["#000000", "#acb5af", "#d2a3a9"], isNew: true },
-    { name: "Clara Layer Short Dress", price: 6790, image: mini17 , colors: ["#000000", "#FFFFFF", "#a7cec9"], isNew: true },
-    { name: "Molly Button Down Midi Dress", price: 6990, image: mini18, colors: ["#809bce", "#b8e0d2", "#f6f7b0"], isNew: true },
-    { name: "Clara Layer Short Dress", price: 6790, image: mini19 , colors: ["#bc85a3", "#000000", "#b1cfeb"], isNew: true },
-    { name: "Molly Button Down Midi Dress", price: 6990, image: mini20, colors: ["#faf9f6", "#e7c6ff", "#000000"], isNew: true }
+    {id:1, name: "Camila Puff Sleeve Dress", price: 7590, sku: "159291-2024-133-1", image: mini5, relatedImages: [mini4, mini1], colors: ["#809bce", "#a7cec9", "#e7c6ff"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:2, name: "Ella Frill Short Dress", price: 7490, sku: "159291-2024-133-2", image: mini6 , relatedImages: [mini6_img2, mini6_img3], colors: ["#e06c71", "#f6f7b0", "#bc85a3"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:3, name: "Clara Layer Short Dress", price: 6790, sku: "159291-2024-133-3", image: mini7 , relatedImages: [mini4, mini1], colors: ["#bc85a3", "#000000", "#faf9f6"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:4, name: "Molly Button Down Midi Dress", price: 6990, sku: "159291-2024-133-4", image: mini8, relatedImages: [mini4, mini1], colors: ["#faf9f6", "#e7c6ff", "#000000"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:5, name: "Flare and Flair Dress", price: 7590, sku: "159291-2024-133-5", image: mini1 , relatedImages: [mini4, mini1], colors: ["#000000", "#FFFFFF", "#a7cec9"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:6, name: "Ella Frill Short Dress", price: 7490, sku: "159291-2024-133-6", image: mini2 , relatedImages: [mini4, mini1], colors: ["#000000", "#acb5af", "#d2a3a9"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:7, name: "Clara Layer Short Dress", price: 6790, sku: "159291-2024-133-7", image: mini3 , relatedImages: [mini4, mini1], colors: ["#809bce", "#b8e0d2", "#f6f7b0"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:8, name: "Molly Button Down Midi Dress", price: 6990, sku: "159291-2024-133-8", image: mini4, relatedImages: [mini4, mini1], colors: ["#bc85a3", "#000000", "#b1cfeb"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:9, name: "Flare and Flair Dress", price: 7590, sku: "159291-2024-133-9", image: mini9 , relatedImages: [mini4, mini1], colors: ["#faf9f6", "#e7c6ff", "#000000"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...",  isNew: true },
+    {id:10, name: "Ella Frill Short Dress", price: 7490, sku: "159291-2024-133-10", image: mini10 , relatedImages: [mini4, mini1], colors: ["#000000", "#FFFFFF", "#a7cec9"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...",  isNew: true },
+    {id:11, name: "Clara Layer Short Dress", price: 6790, sku: "159291-2024-133-11", image: mini11 , relatedImages: [mini4, mini1], colors: ["#faf9f6", "#e7c6ff", "#000000"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:12, name: "Molly Button Down Midi Dress", price: 6990, sku: "159291-2024-133-12", image: mini12, relatedImages: [mini4, mini1], colors: ["#809bce", "#b8e0d2", "#f6f7b0"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:13, name: "Clara Layer Short Dress", price: 6790, sku: "159291-2024-133-13", image: mini13 , relatedImages: [mini4, mini1], colors: ["#000000", "#FFFFFF", "#e06c71"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:14, name: "Molly Button Down Midi Dress", price: 6990, sku: "159291-2024-133-14", image: mini14, relatedImages: [mini4, mini1], colors: ["#bc85a3", "#000000", "#b1cfeb"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...",  isNew: true },
+    {id:15, name: "Clara Layer Short Dress", price: 6790, sku: "159291-2024-133-15", image: mini15 ,relatedImages: [mini4, mini1], colors: ["#faf9f6", "#e7c6ff", "#000000"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:16, name: "Molly Button Down Midi Dress", price: 6990, sku: "159291-2024-133-16", image: mini16, relatedImages: [mini4, mini1], colors: ["#000000", "#acb5af", "#d2a3a9"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:17, name: "Clara Layer Short Dress", price: 6790, sku: "159291-2024-133-17", image: mini17 , relatedImages: [mini4, mini1], colors: ["#000000", "#FFFFFF", "#a7cec9"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:18, name: "Molly Button Down Midi Dress", price: 6990, sku: "159291-2024-133-18", image: mini18, relatedImages: [mini4, mini1], colors: ["#809bce", "#b8e0d2", "#f6f7b0"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:19, name: "Clara Layer Short Dress", price: 6790, sku: "159291-2024-133-19", image: mini19 , relatedImages: [mini4, mini1], colors: ["#bc85a3", "#000000", "#b1cfeb"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:20, name: "Molly Button Down Midi Dress", price: 6990, sku: "159291-2024-133-20", image: mini20, relatedImages: [mini4, mini1], colors: ["#faf9f6", "#e7c6ff", "#000000"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true }
   ];
 
    const sizes = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "UK 4", "UK 6", "UK 8", "UK 10", "UK 12", "UK 14"];
+
+   const handleProductClick = (product) => {
+    navigate(`/product/${product.id}`, { state: { product } });
+  };
 
   return (
     <div className="product-page">
@@ -125,7 +134,7 @@ const MiniProduct = () => {
         </div>
         <div className="products-grid-mini">
           {productsmini.map((productmini, index) => (
-            <div className="product-card-mini" key={index}>
+            <div className="product-card-mini" key={index} onClick={() => handleProductClick(productmini)}>
               {productmini.isNew && <div className="new-badge-mini">New</div>}
               <img src={productmini.image} alt={productmini.name} />
               <div className="product-info-mini">

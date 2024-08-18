@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/header.css';
 
@@ -6,8 +6,14 @@ const Header = () => {
   const [showAccountOptions, setShowAccountOptions] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showDropdown, setShowDropdown] = useState({});
+  const [cartCount, setCartCount] = useState(0);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    setCartCount(cartItems.length);
+  }, []);
 
   const toggleAccountOptions = () => {
     setShowAccountOptions(!showAccountOptions);
@@ -27,6 +33,10 @@ const Header = () => {
 
   const handleHomeClick = () => {
     navigate('/home');
+  };
+
+  const handleCartClick = () => {
+    navigate('/cart');
   };
 
   const handleMouseEnter = (category) => {
@@ -108,7 +118,10 @@ const Header = () => {
       <div className="header-right">
         <i className="fas fa-search search-icon"></i>
         <i className="fas fa-user account-icon" onClick={toggleAccountOptions}></i>
-        <i className="fas fa-shopping-cart cart-icon"></i>
+        <div className="cart-container" onClick={handleCartClick}>
+          <i className="fas fa-shopping-cart cart-icon"></i>
+          {cartCount > 0 && <span className="cart-count">{cartCount}</span>}
+        </div>
         <i className="fas fa-bars menu-icon" onClick={toggleMenu}></i>
         {showAccountOptions && (
           <div className="account-options">

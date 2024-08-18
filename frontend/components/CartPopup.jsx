@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import '../styles/cartPopup.css';
 
 const CartPopup = ({ product, quantity, onClose }) => {
+  const navigate = useNavigate();
   const subtotal = product.price * quantity;
 
   const [quantity1, setQuantity] = useState(1);

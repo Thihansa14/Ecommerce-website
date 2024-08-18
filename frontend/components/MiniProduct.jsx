@@ -11,6 +11,8 @@ import mini6 from '../assets/images/product_mini1.webp';
 import mini6_img2 from '../assets/images/product_mini1_img2.webp'
 import mini6_img3 from '../assets/images/product_mini1_img3.webp'
 import mini7 from '../assets/images/product_mini3.webp';
+import mini7_img2 from '../assets/images/product_mini3_img2.webp'
+import mini7_img3 from '../assets/images/product_mini3_img3.webp'
 import mini8 from '../assets/images/product_mini7.webp'; 
 import mini9 from '../assets/images/product_mini8.webp'; 
 import mini10 from '../assets/images/product_mini9.jpg'; 
@@ -31,7 +33,7 @@ const MiniProduct = () => {
   const productsmini = [
     {id:1, name: "Camila Puff Sleeve Dress", price: 7590, sku: "159291-2024-133-1", image: mini5, relatedImages: [mini4, mini1], colors: ["#809bce", "#a7cec9", "#e7c6ff"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
     {id:2, name: "Ella Frill Short Dress", price: 7490, sku: "159291-2024-133-2", image: mini6 , relatedImages: [mini6_img2, mini6_img3], colors: ["#e06c71", "#f6f7b0", "#bc85a3"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
-    {id:3, name: "Clara Layer Short Dress", price: 6790, sku: "159291-2024-133-3", image: mini7 , relatedImages: [mini4, mini1], colors: ["#bc85a3", "#000000", "#faf9f6"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
+    {id:3, name: "Clara Layer Short Dress", price: 6790, sku: "159291-2024-133-3", image: mini7 , relatedImages: [mini7_img2, mini7_img3], colors: ["#bc85a3", "#000000", "#faf9f6"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
     {id:4, name: "Molly Button Down Midi Dress", price: 6990, sku: "159291-2024-133-4", image: mini8, relatedImages: [mini4, mini1], colors: ["#faf9f6", "#e7c6ff", "#000000"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
     {id:5, name: "Flare and Flair Dress", price: 7590, sku: "159291-2024-133-5", image: mini1 , relatedImages: [mini4, mini1], colors: ["#000000", "#FFFFFF", "#a7cec9"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },
     {id:6, name: "Ella Frill Short Dress", price: 7490, sku: "159291-2024-133-6", image: mini2 , relatedImages: [mini4, mini1], colors: ["#000000", "#acb5af", "#d2a3a9"], sizes: ["S", "M", "L"], details: "Product details here...", exchanges: "Exchange policy here...", isNew: true },

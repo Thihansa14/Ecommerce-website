@@ -8,6 +8,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import MiniProduct from './components/MiniProduct';
 import ProductDetails from './components/ProductDetails';
+import ShoppingCart from './components/ShoppingCart';
 import './styles/index.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/mini-dresses" element={<MiniProduct />} />
           <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/cart" element={<ShoppingCart />} />
         </Routes>
         <Footer />
       </div>

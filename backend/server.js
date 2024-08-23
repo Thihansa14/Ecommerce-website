@@ -16,6 +16,31 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 app.use('/api/auth', signupRoutes);
 
+const productSchema = new mongoose.Schema({
+  id: Number,
+  name: String,
+  price: Number,
+  sku: String,
+  image: String,
+  relatedImages: [String],
+  colors: [String],
+  sizes: [String],
+  details: String,
+  exchanges: String,
+  isNew: Boolean
+});
+
+const MiniDress = mongoose.model('MiniDress', productSchema);
+
+app.get('/api/minidresses', async (req, res) => {
+  try {
+    const products = await MiniDress.find();
+    res.json(products);
+  } catch (err) {
+    res.status(500).send("Server Error");
+  }
+});
+
 app.listen(PORT, () => {
   console.log('Server is running on port ${PORT}');
 });

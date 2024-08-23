@@ -46,7 +46,7 @@ const Login = () => {
         <img src={loginImage} alt="Mimosa" />
       </div>
       <div className="login-right">
-        <h2>MIMOSA LOGIN</h2>
+        <h2>UrbanWeave LOGIN</h2>
         <form onSubmit={handleSignIn}>
           <label htmlFor="email">Email</label>
           <input

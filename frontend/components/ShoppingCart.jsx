@@ -4,7 +4,7 @@ import '../styles/shoppingCart.css';
 
 const ShoppingCart = () => {
   const [cartItems, setCartItems] = useState([]);
-
+  const [itemToRemove, setItemToRemove] = useState(null); // State to track the item to be removed
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -24,10 +24,21 @@ const ShoppingCart = () => {
   };
 
   const handleRemoveItem = (index) => {
-    const newCartItems = [...cartItems];
-    newCartItems.splice(index, 1);
-    setCartItems(newCartItems);
-    localStorage.setItem('cartItems', JSON.stringify(newCartItems));
+    setItemToRemove(index); // Set the item to be removed
+  };
+
+  const confirmRemoveItem = () => {
+    if (itemToRemove !== null) {
+      const newCartItems = [...cartItems];
+      newCartItems.splice(itemToRemove, 1);
+      setCartItems(newCartItems);
+      localStorage.setItem('cartItems', JSON.stringify(newCartItems));
+      setItemToRemove(null); // Clear the item to remove after deletion
+    }
+  };
+
+  const cancelRemoveItem = () => {
+    setItemToRemove(null); // Clear the item to remove without deletion
   };
 
   const calculateSubtotal = () => {
@@ -91,6 +102,19 @@ const ShoppingCart = () => {
           PROCEED TO CHECKOUT
         </button>
       </div>
+
+      {/* Confirmation Modal */}
+      {itemToRemove !== null && (
+        <div className="modal">
+          <div className="modal-content">
+            <h3>Are you sure you want to remove this item from your cart?</h3>
+            <div className="modal-actions">
+              <button className="confirm-btn" onClick={confirmRemoveItem}>Yes, Remove</button>
+              <button className="cancel-btn" onClick={cancelRemoveItem}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

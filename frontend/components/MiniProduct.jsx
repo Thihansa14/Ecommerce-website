@@ -157,3 +157,7 @@ const MiniProduct = () => {
 };
 
 export default MiniProduct;
+
+
+
+const sizes = ["XXS", "XS", "S", "M", "L", "XL", "XXL", "UK 4", "UK 6", "UK 8", "UK 10", "UK 12", "UK 14"];

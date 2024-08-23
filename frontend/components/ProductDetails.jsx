@@ -1,4 +1,3 @@
-// src/components/ProductDetails.jsx
 import React, { useState } from 'react';
 import '../styles/productDetails.css';
 import { useLocation } from 'react-router-dom';
@@ -7,7 +6,7 @@ import CartPopup from './CartPopup'; // Import the CartPopup component
 const ProductDetails = () => {
   const { state } = useLocation();
   const { product } = state || {};
-  
+
   const [selectedImage, setSelectedImage] = useState(product?.image);
   const [quantity, setQuantity] = useState(1);
   const [showPopup, setShowPopup] = useState(false); // State to control the popup
@@ -23,6 +22,21 @@ const ProductDetails = () => {
   };
 
   const handleAddToCart = () => {
+    // Save the product to localStorage
+    const storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const existingItemIndex = storedCartItems.findIndex(item => item.sku === product.sku);
+
+    if (existingItemIndex >= 0) {
+      // If the product is already in the cart, update the quantity
+      storedCartItems[existingItemIndex].quantity += quantity;
+    } else {
+      // If the product is not in the cart, add it
+      storedCartItems.push({ ...product, quantity });
+    }
+
+    localStorage.setItem('cartItems', JSON.stringify(storedCartItems));
+
+    // Show the popup
     setShowPopup(true);
   };
 
@@ -68,7 +82,6 @@ const ProductDetails = () => {
           <button onClick={() => handleQuantityChange(-1)}>-</button>
           <span>{quantity}</span>
           <button onClick={() => handleQuantityChange(1)}>+</button>
-          
         </div>
         <button className="cart-btn" onClick={handleAddToCart}>ADD TO CART</button>
         <button className="wishlist-btn">Add to Wishlist</button> <hr />

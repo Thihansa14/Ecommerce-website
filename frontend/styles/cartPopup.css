@@ -80,7 +80,7 @@
     margin-bottom: 10px;
   }
   
-  .checkout-btn, .view-cart-btn, .continue-shopping-btn {
+  .popup-checkout-btn, .view-cart-btn, .continue-shopping-btn, .remove-btn {
     display: block;
     width: 100%;
     padding: 10px;
@@ -89,18 +89,49 @@
     cursor: pointer;
   }
   
-  .checkout-btn {
-    background: #000;
+  .popup-checkout-btn {
+    background: #2a85aa;
     color: #fff;
   }
   
   .view-cart-btn {
-    background: #6cbfe0;
+    background: #2a85aa;
     color: #fff;
   }
   
   .continue-shopping-btn {
-    background: #ccc;
-    color: #000;
+    background: #2a85aa;
+    color: #fff;
   }
   
+  .popup-checkout-btn:hover, .view-cart-btn:hover, .continue-shopping-btn:hover{
+    background-color: #1e6c8b;
+  }
+
+  .success-message {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745; /* Green color for success */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    z-index: 1100;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    animation: slideDown 0.3s ease-in-out;
+  }
+  
+  /* Animation for success message */
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -20px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }

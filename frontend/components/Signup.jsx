@@ -58,7 +58,7 @@ const Signup = () => {
       </div>
       <div className="signup-right">
         <h1>Create Your Account</h1>
-        <p>Welcome to MIMOSA!</p>
+        <p>Welcome to UrbanWeave!</p>
         <button className="google-signup">
           <img src="src/assets/images/google.webp" alt="Google icon" /> Sign up with Google
         </button>

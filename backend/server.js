@@ -70,6 +70,10 @@ const Product = mongoose.model("Product", {
     type: [String],
     default: [],
   },
+  category:{
+    type: String,
+    required: true,
+  },
   colors: {
     type: [String],
     default: [],
@@ -111,6 +115,7 @@ app.post('/addproduct', async (req, res) => {
     sku: req.body.sku,
     image: req.body.image,
     relatedImages: req.body.relatedImages,
+    category: req.body.category,
     colors: req.body.colors,
     sizes: req.body.sizes,
     details: req.body.details,
@@ -140,6 +145,18 @@ app.get('/allproducts', async (req, res) => {
   let products = await Product.find({});
   console.log("All Products Fetched");
   res.send(products);
+});
+
+// creating endpoint for minidresses data
+app.get('/minidresses', async (req, res) => {
+  try {
+    let products = await Product.find({ category: 'mini_dresses' });
+    console.log("Mini Dresses Fetched.");
+    res.send(products);
+  } catch (error) {
+    console.error("Error fetching mini dresses:", error);
+    res.status(500).send("Internal Server Error");
+  }
 });
 
 app.listen(PORT, () => {

@@ -4,12 +4,8 @@ import '../styles/home.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import NewArrivals1 from '../assets/images/product3.jpg';
-import NewArrivals2 from '../assets/images/product6.jpg';
-import NewArrivals3 from '../assets/images/product15.webp'; 
-import NewArrivals4 from '../assets/images/product2.webp'; 
-import NewArrivals5 from '../assets/images/product12.webp'; 
-import NewArrivals6 from '../assets/images/product9.webp';
+import mini_dresses from '../assets/mini_dresses'
+import new_collections from '../assets/new_arrivals'
 
 import BestSellers1 from '../assets/images/product1.webp';
 import BestSellers2 from '../assets/images/product18.webp';
@@ -31,11 +27,6 @@ import maxi2 from '../assets/images/product_maxi3.jpg';
 import maxi3 from '../assets/images/product_maxi5.jpg'; 
 import maxi4 from '../assets/images/product_maxi2.webp'; 
 
-import mini1 from '../assets/images/product_mini1.jpg';
-import mini2 from '../assets/images/product_mini3.jpg';
-import mini3 from '../assets/images/product_mini4.jpg'; 
-import mini4 from '../assets/images/product_mini5.jpg'; 
-
 import swim1 from '../assets/images/product_swim1.jpg';
 import swim2 from '../assets/images/product_swim2.webp';
 import swim3 from '../assets/images/product_swim4.jpg'; 
@@ -49,45 +40,6 @@ import Hero5 from '../assets/images/hero5.jpg';
 
 import Banner from '../assets/images/store.jpg';
 import Egift from '../assets/images/e-gift.webp';
-
-const products = [
-  {
-    image: NewArrivals1,
-    name: 'Ring Detailed Satin Corset Top',
-    price: 'Rs 3,450.00 LKR',
-    colors: ['#809bce', '#b8e0d2', '#f6f7b0'],
-  },
-  {
-    image: NewArrivals2,
-    name: 'Button Down Oversized Top',
-    price: 'Rs 4,450.00 LKR',
-    colors: ['#000000', '#FFFFFF', '#e06c71'],
-  },
-  {
-    image: NewArrivals3,
-    name: 'Button Down Crop Top',
-    price: 'Rs 3,500.00 LKR',
-    colors: ['#bc85a3', '#000000', '#b1cfeb'],
-  },
-  {
-    image: NewArrivals4,
-    name: 'Halter Neck Back Tie up Satin Top',
-    price: 'Rs 3,450.00 LKR',
-    colors: ['#faf9f6', '#e7c6ff', '#000000'],
-  },
-  {
-    image: NewArrivals5,
-    name: 'Corset Detailed Back Tieup Top',
-    price: 'Rs 2,590.00 LKR',
-    colors: ['#000000', '#FFFFFF', '#a7cec9'],
-  },
-  {
-    image: NewArrivals6,
-    name: 'Cowl Neck Satin Top',
-    price: 'Rs 3,250.00 LKR',
-    colors: ['#000000', '#acb5af', '#d2a3a9'],
-  },
-];
 
 const bestSellers = [
     {
@@ -200,33 +152,6 @@ const bestSellers = [
     }
   ];
 
-  const minidress = [
-    {
-      image: mini1,
-      name: 'Bustier Detail Front Tie-up Top',
-      price: 'Rs 3,450.00 LKR',
-      colors: ['#809bce', '#b8e0d2', '#f6f7b0'],
-    },
-    {
-      image: mini2,
-      name: 'Halter Neck Crop Top',
-      price: 'Rs 4,450.00 LKR',
-      colors: ['#000000', '#FFFFFF', '#e06c71'],
-    },
-    {
-      image: mini3,
-      name: 'Corset Detail Back Tie-up Top',
-      price: 'Rs 3,500.00 LKR',
-      colors: ['#bc85a3', '#000000', '#b1cfeb'],
-    },
-    {
-      image: mini4,
-      name: 'Short Sleeve Oversize Shirt',
-      price: 'Rs 3,450.00 LKR',
-      colors: ['#faf9f6', '#e7c6ff', '#000000'],
-    }
-  ];
-
   const swimWear = [
     {
       image: swim1,
@@ -312,27 +237,28 @@ const Home = () => {
       </section>
       
       <section className="new-arrivals">
-        <h2>NEW ARRIVALS</h2>
-        <div className="carousel-container">
-            <button className="prev" onClick={scrollLeft}>&lt;</button>
-            <div className="product-row" id="product-row">
-                {products.map((product, index) => (
-                  <div className="product-box" key={index} style={{ backgroundImage: `url(${product.image})` }}>
-                    <div className="product-description">
-                      <h3>{product.name}</h3>
-                      <p>{product.price}</p>
-                      <div className="product-colors">
-                        {product.colors.map((color, colorIndex) => (
-                          <span key={colorIndex} style={{ backgroundColor: color }}></span>
-                        ))}
-                      </div>
-                    </div>
+    <h2>NEW ARRIVALS</h2>
+    <div className="carousel-container">
+        <button className="prev" onClick={scrollLeft}>&lt;</button>
+        <div className="product-row" id="product-row">
+            {new_collections.map((product, index) => (
+              <div className="product-box" key={index} style={{ backgroundImage: `url(${product.image})` }}>
+                <div className="product-description">
+                  <h3>{product.name}</h3>
+                  <p>{product.price}</p>
+                  <div className="product-colors">
+                    {product.colors.map((color, colorIndex) => (
+                      <span key={colorIndex} style={{ backgroundColor: color }}></span>
+                    ))}
                   </div>
-                ))}
-            </div>
-            <button className="next" onClick={scrollRight}>&gt;</button>
+                </div>
+              </div>
+            ))}
         </div>
-      </section>
+        <button className="next" onClick={scrollRight}>&gt;</button>
+    </div>
+</section>
+
       
       <section className="best-sellers">
         <h2>BEST SELLERS</h2>
@@ -420,7 +346,7 @@ const Home = () => {
       <section className="mini-dresses">
         <h2><a href="#">Mini Dresses</a></h2>
         <div className="product-grid">
-          {minidress.map((product4, index) => (
+          {mini_dresses.slice(0,4).map((product4, index) => (
             <div className="product-box" key={index} style={{ backgroundImage: `url(${product4.image})` }}>
               <div className="product-description">
                 <h3>{product4.name}</h3>

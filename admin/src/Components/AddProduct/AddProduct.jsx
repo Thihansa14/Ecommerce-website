@@ -43,6 +43,8 @@ const AddProduct = () => {
 
     let formData = new FormData();
     formData.append('product',image);
+    formData.append('related_image1', relatedImage1);
+    formData.append('related_image2', relatedImage2);
 
     await fetch('http://localhost:5000/upload',{
       method: 'POST',
@@ -55,6 +57,10 @@ const AddProduct = () => {
     if(responseData.success)
     {
       product.image = responseData.image_url;
+      product.relatedImages = [];
+      if (responseData.related_image1_url) product.relatedImages.push(responseData.related_image1_url);
+      if (responseData.related_image2_url) product.relatedImages.push(responseData.related_image2_url);
+      
       console.log(product);
       await fetch('http://localhost:5000/addproduct',{
         method:'POST',
